@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李宇祥香港及美國律師事務所</title>
+    <!-- 引入 Tailwind CSS 腳本 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Lucide Icons 腳本 -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 設定字體為 Inter，確保專業和清晰 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* 輕微的灰色背景 */
+        }
+        /* 定義主色調 (Professional Blue) */
+        .primary-color {
+            color: #1e40af; /* 深藍色文字 */
+        }
+        .primary-bg {
+            background-color: #1e40af; /* 深藍色背景 */
+        }
+        .primary-border {
+            border-color: #1e40af;
+        }
+        /* 卡片懸停效果 */
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(30, 64, 175, 0.1);
+        }
+
+        /* 時間軸針對手機版的調整 */
+        @media (max-width: 768px) {
+            .timeline-item {
+                justify-content: flex-start !important;
+                margin-left: 10px;
+                position: relative;
+            }
+            .timeline-item > div:first-child {
+                width: 100% !important;
+                padding-right: 0 !important;
+                padding-left: 20px !important;
+                text-align: left !important;
+            }
+            .timeline-item::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 20px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #1e40af;
+                z-index: 10;
+            }
+            .timeline-item:last-child::before {
+                background-color: #dc2626; /* 關鍵事件用紅色 */
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- 頂部導航欄 (Header) -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- 網站Logo/姓名 -->
+                <a href="#" class="text-xl font-bold primary-color tracking-wide">
+                    李宇祥香港及美國律師事務所
+                </a>
+                <!-- 桌面導航 -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-gray-600 hover:text-blue-800 transition duration-150 font-medium">關於我們</a>
+                    <a href="#team" class="text-gray-600 hover:text-blue-800 transition duration-150 font-medium">核心團隊</a>
+                    <a href="#services" class="text-gray-600 hover:text-blue-800 transition duration-150 font-medium">業務內容</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full primary-bg text-white hover:bg-blue-800 transition duration-150 shadow-md">聯繫方式</a>
+                </nav>
+                <!-- 手機菜單按鈕 -->
+                <button id="menu-button" class="md:hidden p-2 text-gray-600 hover:text-blue-800 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 手機彈出式菜單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+            <div class="pt-2 pb-4 space-y-1 px-4">
+                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-800">關於我們</a>
+                <a href="#team" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-800">核心團隊</a>
+                <a href="#services" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-800">業務內容</a>
+                <a href="#contact" class="block w-full text-center mt-4 px-3 py-3 rounded-md text-base font-medium primary-bg text-white hover:bg-blue-800 shadow-sm">聯繫方式</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主視覺區 (Hero Section) -->
+    <section class="py-16 md:py-24 bg-white border-b border-gray-100 relative overflow-hidden">
+        <!-- 背景裝飾 -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-50 opacity-50 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-50 opacity-50 blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- 文本內容 -->
+            <div>
+                <span class="inline-block px-3 py-1 rounded-full bg-blue-100 text-sm font-semibold primary-color mb-6 tracking-wider">
+                    香港 • 美國 • 英國 • 澳洲 跨國執業
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-gray-900">
+                    李宇祥律師<br/>
+                    <span class="primary-color">跨國法律專家</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
+                    自1981年開始執業至今，專注於 <strong>銀行金融、上市公司、房地產發展及跨境遺產繼承</strong>。為您提供超過40年的專業深度與國際視野。
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="flex items-center justify-center px-8 py-3.5 text-lg font-semibold rounded-lg text-white primary-bg hover:bg-blue-800 transition duration-300 shadow-lg hover:shadow-xl">
+                        立即預約諮詢
+                        <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+                    </a>
+                    <a href="#services" class="flex items-center justify-center px-8 py-3.5 text-lg font-semibold rounded-lg primary-color border-2 primary-border hover:bg-blue-50 transition duration-300">
+                        查看業務內容
+                    </a>
+                </div>
+            </div>
+            <!-- 律師專業形象圖 (Placeholder) -->
+            <div class="md:text-right relative">
+                <div class="absolute inset-0 bg-blue-600 rounded-2xl transform translate-x-4 translate-y-4 opacity-10"></div>
+                <img src="https://placehold.co/400x500/1e40af/ffffff?text=Founder+Portrait" alt="李宇祥律師專業肖像" class="relative rounded-xl shadow-2xl w-full max-w-sm md:max-w-md lg:max-w-lg mx-auto transform hover:-translate-y-2 transition duration-500 ease-in-out object-cover z-10">
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於我們/事務所簡介 (About Section) -->
+    <section id="about" class="py-20 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">事務所創辦人</h2>
+                <div class="w-20 h-1 primary-bg mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-10 items-stretch">
+                <!-- 教育與資歷卡片 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 primary-border transform transition duration-300 hover:shadow-xl h-full">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6 primary-color"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">多國執業資格</h3>
+                    <ul class="space-y-4 text-gray-600">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 primary-color mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span>香港執業律師</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 primary-color mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span>美國加州執業律師</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 primary-color mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span>英國及澳洲（首都地區）註冊律師</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 primary-color mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span>澳洲高院註冊大律師</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 primary-color mr-3 mt-0.5 flex-shrink-0"></i>
+                            <span>中國委託公證人（168）</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 執業理念 -->
+                <div class="lg:col-span-2 bg-white p-8 md:p-10 rounded-2xl shadow-lg border-l-4 primary-border h-full flex flex-col justify-center">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 flex items-center">
+                        李宇祥律師專業背景與承諾
+                    </h3>
+                    <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+                        <div class="flex">
+                            <div class="mr-4 mt-1"><i data-lucide="graduation-cap" class="w-6 h-6 primary-color"></i></div>
+                            <div><strong class="text-gray-900">教育背景：</strong> 理學碩士、法律博士。</div>
+                        </div>
+                        <div class="flex">
+                            <div class="mr-4 mt-1"><i data-lucide="history" class="w-6 h-6 primary-color"></i></div>
+                            <div><strong class="text-gray-900">執業經驗：</strong> 自1981年起，從事律師工作超過40年，積累了深厚的實務經驗。</div>
+                        </div>
+                        <div class="flex">
+                            <div class="mr-4 mt-1"><i data-lucide="landmark" class="w-6 h-6 primary-color"></i></div>
+                            <div><strong class="text-gray-900">學術及公職：</strong> 曾任中國社科院兼職研究員、中國政法大學兼職導師；曾擔任香港律師紀律審裁團成員及建築物條例上訴審裁團主席成員。</div>
+                        </div>
+                        <div class="flex">
+                            <div class="mr-4 mt-1"><i data-lucide="scale" class="w-6 h-6 primary-color"></i></div>
+                            <div><strong class="text-gray-900">核心承諾：</strong> 以豐富的跨境經驗，為客戶在複雜的銀行金融、上市公司、房地產及信託事務中，提供最穩健的法律保障。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心團隊 (Team Section) -->
+    <section id="team" class="py-20 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">核心團隊</h2>
+                <div class="w-20 h-1 primary-bg mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-gray-600">具備國際視野和新興領域經驗的法律專才。</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+                <div class="grid lg:grid-cols-2">
+                    <!-- 左側：個人簡介與相片區塊 -->
+                    <div class="p-8 md:p-12 primary-bg text-white flex flex-col justify-center">
+                        <h3 class="text-3xl font-bold mb-2">李葆瑤 律師</h3>
+                        <p class="text-blue-200 text-lg mb-8 font-medium tracking-wide">LEE BOU YEW KAZE</p>
+                        
+                        <h4 class="text-xl font-semibold mb-4 flex items-center">
+                            <i data-lucide="globe-2" class="w-5 h-5 mr-2 text-blue-300"></i> 教育與國際經驗
+                        </h4>
+                        <ul class="space-y-4 text-blue-50 mb-8">
+                            <li class="flex items-start">
+                                <span class="mr-2 text-blue-300">•</span>
+                                <span><strong>學位：</strong>英國利茲大學法律學士、美國南加州大學法律碩士。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-blue-300">•</span>
+                                <span><strong>執照：</strong>於2019年取得美國加州律師執照，並將取得香港及英國律師執照。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-blue-300">•</span>
+                                <span><strong>前期經驗：</strong>在取得律師執照前，已在香港、北京和美國的不同律師事務所及私人公司累積深厚法律工作經驗。</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="mr-2 text-blue-300">•</span>
+                                <span><strong>專業技能：</strong>精於起草及翻譯各類法律文件，擁有豐富的法律研究經驗。</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 右側：核心業務貢獻 -->
+                    <div class="p-8 md:p-12 bg-white flex flex-col justify-center">
+                        <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-6">
+                            <i data-lucide="briefcase" class="w-6 h-6 primary-color"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-8">核心業務貢獻</h4>
+                        
+                        <div class="space-y-5">
+                            <div class="flex items-start p-4 rounded-xl bg-gray-50 hover:bg-blue-50 transition duration-200">
+                                <i data-lucide="check" class="w-5 h-5 primary-color mt-0.5 mr-4 flex-shrink-0"></i>
+                                <p class="text-gray-700">曾為一法國知名奢侈品牌提供商標和知識產權法律服務。</p>
+                            </div>
+                            <div class="flex items-start p-4 rounded-xl bg-gray-50 hover:bg-blue-50 transition duration-200">
+                                <i data-lucide="check" class="w-5 h-5 primary-color mt-0.5 mr-4 flex-shrink-0"></i>
+                                <p class="text-gray-700">為香港電訊服務商審閱、起草合同，並成功解決勞資糾紛。</p>
+                            </div>
+                            <div class="flex items-start p-4 rounded-xl bg-gray-50 hover:bg-blue-50 transition duration-200">
+                                <i data-lucide="check" class="w-5 h-5 primary-color mt-0.5 mr-4 flex-shrink-0"></i>
+                                <p class="text-gray-700">曾在美國提供留學生及海外專才的專業移民法律服務。</p>
+                            </div>
+                            <div class="flex items-start p-4 rounded-xl bg-gray-50 hover:bg-blue-50 transition duration-200">
+                                <i data-lucide="check" class="w-5 h-5 primary-color mt-0.5 mr-4 flex-shrink-0"></i>
+                                <p class="text-gray-700">為香港上市公司提供美國海關退稅事宜的法律顧問服務。</p>
+                            </div>
+                            <div class="flex items-start p-4 rounded-xl bg-gray-50 hover:bg-blue-50 transition duration-200">
+                                <i data-lucide="check" class="w-5 h-5 primary-color mt-0.5 mr-4 flex-shrink-0"></i>
+                                <p class="text-gray-700">多次參與民事、刑事訴訟及複雜的遺產繼承處理事務。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專業領域 (Services Section) -->
+    <section id="services" class="py-20 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">專業業務內容</h2>
+                <div class="w-20 h-1 primary-bg mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-gray-600">涵蓋多面向法律領域，為本地、海外及上市公司客戶提供全面且專業的法律支援。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <!-- 服務卡片 1 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md border-t-4 border-red-500 flex flex-col items-center text-center">
+                    <div class="p-4 rounded-full bg-red-50 mb-6">
+                        <i data-lucide="building" class="w-8 h-8 text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">銀行金融與公司</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">銀行和金融、公司和商業交易、收購和合併、上市公司顧問、公司秘書服務。</p>
+                </div>
+                <!-- 服務卡片 2 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md border-t-4 border-green-500 flex flex-col items-center text-center">
+                    <div class="p-4 rounded-full bg-green-50 mb-6">
+                        <i data-lucide="home" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">房地產與產權轉讓</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">產權轉讓、樓宇買賣和租賃、房地產發展法律服務、舊房產收購和重建。</p>
+                </div>
+                <!-- 服務卡片 3 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md border-t-4 border-yellow-500 flex flex-col items-center text-center">
+                    <div class="p-4 rounded-full bg-yellow-50 mb-6">
+                        <i data-lucide="file-text" class="w-8 h-8 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">遺產承辦與信託</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">遺產承辦、遺囑認證、信託、稅務處理、代表客戶申請香港和美國的遺產管理。</p>
+                </div>
+                <!-- 服務卡片 4 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md border-t-4 border-purple-500 flex flex-col items-center text-center">
+                    <div class="p-4 rounded-full bg-purple-50 mb-6">
+                        <i data-lucide="gavel" class="w-8 h-8 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">民事與刑事訴訟</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">各類民事及刑事訴訟代理、商業合約糾紛處理、勞資糾紛協調、仲裁事務。</p>
+                </div>
+                <!-- 服務卡片 5 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md border-t-4 border-teal-500 flex flex-col items-center text-center lg:col-span-2 xl:col-span-1 xl:col-start-5 lg:col-start-2">
+                    <div class="p-4 rounded-full bg-teal-50 mb-6">
+                        <i data-lucide="heart-handshake" class="w-8 h-8 text-teal-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">婚姻與意外索償</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">婚姻事務 (離婚、贍養費等)、<strong>交通意外索償</strong>、人身傷害賠償及知識產權糾紛。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 執業歷程 (Timeline Section) -->
+    <section id="timeline" class="py-20 md:py-28 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">事務所專業里程碑</h2>
+                <div class="w-20 h-1 primary-bg mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-gray-600">累積超過四十年實務經驗，始終專注於提供卓越的法律服務。</p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto py-8">
+                <!-- 時間軸中線 -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 primary-bg h-full hidden md:block rounded-full opacity-20"></div>
+
+                <!-- 事件 1 -->
+                <div class="timeline-item flex justify-start mb-12 md:mb-20 relative">
+                    <div class="w-full md:w-1/2 md:pr-12 text-right">
+                        <div class="bg-gray-50 p-6 md:p-8 rounded-2xl shadow-lg border-t-4 primary-border hover:shadow-xl transition duration-300">
+                            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 primary-color font-bold text-sm mb-4">1981</span>
+                            <h4 class="text-2xl font-bold text-gray-900 mb-3">專業起步</h4>
+                            <p class="text-gray-600">李宇祥律師正式開始從事律師工作，為超過40年的法律職涯奠定堅實基礎。</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-10 h-10 rounded-full primary-bg text-white border-4 border-white shadow">
+                        <i data-lucide="flag" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- 事件 2 -->
+                <div class="timeline-item flex justify-end mb-12 md:mb-20 relative">
+                    <div class="w-full md:w-1/2 md:pl-12 text-left">
+                        <div class="bg-gray-50 p-6 md:p-8 rounded-2xl shadow-lg border-t-4 primary-border hover:shadow-xl transition duration-300">
+                            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 primary-color font-bold text-sm mb-4">1987</span>
+                            <h4 class="text-2xl font-bold text-gray-900 mb-3">事務所成立</h4>
+                            <p class="text-gray-600">創立「李宇祥香港及美國律師事務所」並擔任主持人，全面提供香港及美國加州法律服務。</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-10 h-10 rounded-full primary-bg text-white border-4 border-white shadow">
+                        <i data-lucide="building-2" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <!-- 事件 3 -->
+                <div class="timeline-item flex justify-start mb-12 md:mb-20 relative">
+                    <div class="w-full md:w-1/2 md:pr-12 text-right">
+                        <div class="bg-gray-50 p-6 md:p-8 rounded-2xl shadow-lg border-t-4 primary-border hover:shadow-xl transition duration-300">
+                            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 primary-color font-bold text-sm mb-4">榮譽與貢獻</span>
+                            <h4 class="text-2xl font-bold text-gray-900 mb-3">學術與公職</h4>
+                            <p class="text-gray-600">曾擔任香港律師紀律審裁團成員、建築物條例上訴審裁團主席成員，並於多間大學及法學機構擔任兼職研究員與導師。</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-10 h-10 rounded-full primary-bg text-white border-4 border-white shadow">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                    </div>
+                </div>
+                
+                <!-- 事件 4 -->
+                <div class="timeline-item flex justify-end relative">
+                    <div class="w-full md:w-1/2 md:pl-12 text-left">
+                        <div class="bg-gray-50 p-6 md:p-8 rounded-2xl shadow-lg border-t-4 border-red-500 hover:shadow-xl transition duration-300">
+                            <span class="inline-block py-1 px-3 rounded-full bg-red-100 text-red-700 font-bold text-sm mb-4">持續成就</span>
+                            <h4 class="text-2xl font-bold text-gray-900 mb-3">深耕關鍵業務</h4>
+                            <p class="text-gray-600">為多個客戶在香港成功收購舊房產和重建提供法律服務；擔任上市公司總法律顧問；並持續為多個慈善機構提供公益法律支持。</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center w-10 h-10 rounded-full bg-red-600 text-white border-4 border-white shadow">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 客戶種類區 (Clientele Section) -->
+    <section class="py-20 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">主要客戶群體</h2>
+                <div class="w-20 h-1 primary-bg mx-auto rounded-full mb-6"></div>
+                <p class="text-lg text-gray-600">我們的服務對象涵蓋香港及國際間不同規模和產業領域的尊貴客戶。</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 企業客戶 -->
+                <div class="bg-white text-center p-10 rounded-3xl shadow-md border border-gray-100 hover:border-blue-200 hover:shadow-xl transition duration-300 group">
+                    <div class="w-20 h-20 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 transition duration-300">
+                        <i data-lucide="building" class="w-10 h-10 primary-color group-hover:text-white transition duration-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">企業客戶</h3>
+                    <p class="text-gray-600">本地私人中小企業、香港上市集團、海外跨國企業、以及大型樓宇業主與商戶。</p>
+                </div>
+                
+                <!-- 海外與跨境客戶 -->
+                <div class="bg-white text-center p-10 rounded-3xl shadow-md border border-gray-100 hover:border-blue-200 hover:shadow-xl transition duration-300 group">
+                    <div class="w-20 h-20 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 transition duration-300">
+                        <i data-lucide="plane" class="w-10 h-10 primary-color group-hover:text-white transition duration-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">海外與跨境客戶</h3>
+                    <p class="text-gray-600">海外的企業和高淨值個體戶、多個 BVI 公司及隸屬不同司法管轄區的上市公司。</p>
+                </div>
+                
+                <!-- 慈善機構 -->
+                <div class="bg-white text-center p-10 rounded-3xl shadow-md border border-gray-100 hover:border-blue-200 hover:shadow-xl transition duration-300 group">
+                    <div class="w-20 h-20 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 transition duration-300">
+                        <i data-lucide="heart" class="w-10 h-10 primary-color group-hover:text-white transition duration-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">慈善機構</h3>
+                    <p class="text-gray-600">長期為多個知名慈善及非營利機構提供專業法律服務，致力於社會回饋與法律支持。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯繫我們 (Contact Section) -->
+    <section id="contact" class="py-20 md:py-28 primary-bg relative overflow-hidden">
+        <!-- 背景圖案 -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M0 40L40 0H20L0 20M40 40V20L20 40" fill="none" stroke="currentColor" stroke-width="1"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">立即聯繫我們</h2>
+                <div class="w-20 h-1 bg-blue-400 mx-auto rounded-full mb-6"></div>
+                <p class="text-xl text-blue-100">我們提供多種諮詢方式，確保您的法律問題能獲得專業及時的處理。</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+                <!-- 聯繫方式 1: 電話 -->
+                <a href="tel:28680928" class="flex flex-col items-center text-center bg-blue-800/50 backdrop-blur-sm p-10 rounded-3xl border border-blue-700 hover:bg-blue-800 transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mb-6">
+                        <i data-lucide="phone" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">電話諮詢</h3>
+                    <p class="text-blue-200 mb-6 text-sm">最快速的聯繫方式，請於辦公時間內撥打。</p>
+                    <p class="text-xl font-semibold text-white tracking-wider">2868 0928</p>
+                    <p class="text-xl font-semibold text-white tracking-wider mt-1">9544 5061</p>
+                </a>
+
+                <!-- 聯繫方式 2: 辦公室 -->
+                <div class="flex flex-col items-center text-center bg-blue-800/50 backdrop-blur-sm p-10 rounded-3xl border border-blue-700 hover:bg-blue-800 transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mb-6">
+                        <i data-lucide="map-pin" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">辦公室地址</h3>
+                    <p class="text-blue-200 mb-6 text-sm">歡迎預約蒞臨，地點位處香港核心商務區。</p>
+                    <p class="font-semibold text-white text-lg">香港皇后大道中 251 號</p>
+                    <p class="font-semibold text-white text-lg">太興中心二座 15 樓</p>
+                </div>
+
+                <!-- 聯繫方式 3: 郵件 -->
+                <a href="mailto:kaze@ycleelawyers.com" class="flex flex-col items-center text-center bg-blue-800/50 backdrop-blur-sm p-10 rounded-3xl border border-blue-700 hover:bg-blue-800 transition duration-300 transform hover:-translate-y-2">
+                    <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center mb-6">
+                        <i data-lucide="mail" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">電子郵件</h3>
+                    <p class="text-blue-200 mb-6 text-sm">適用於初步文件發送或非緊急的業務諮詢。</p>
+                    <p class="text-lg font-medium text-white break-all">kaze@ycleelawyers.com</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 (Footer) -->
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+            <h2 class="text-2xl font-bold mb-3 tracking-wide">李宇祥香港及美國律師事務所</h2>
+            <p class="text-gray-400 mb-8 max-w-xl">為您提供專業、可靠且具備國際視野的全面法律服務，涵蓋銀行金融、房地產發展、遺產繼承及跨境訴訟。</p>
+            
+            <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm text-gray-400">
+                <a href="#" class="hover:text-white transition duration-200">隱私政策</a>
+                <span class="hidden sm:inline">|</span>
+                <a href="#" class="hover:text-white transition duration-200">免責聲明</a>
+                <span class="hidden sm:inline">|</span>
+                <a href="#contact" class="hover:text-white transition duration-200">預約諮詢</a>
+            </div>
+            
+            <div class="w-full h-px bg-gray-800 mb-8"></div>
+            
+            <p class="text-sm text-gray-500">
+                &copy; <span id="current-year"></span> 李宇祥香港及美國律師事務所 (Y.C. Lee & Co. Lawyers). 版權所有.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 設定當前年份
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // 初始化 Lucide Icons
+        lucide.createIcons();
+
+        // 響應式菜單切換邏輯
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 點擊菜單連結後關閉手機菜單
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
